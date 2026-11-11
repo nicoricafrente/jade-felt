@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,560&family=Outfit:wght@400;500;600&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Outfit", system-ui, sans-serif;
+
+  --color-felt-deep: #07140f;
+  --color-felt: #10241c;
+  --color-felt-light: #1b3b2d;
+  --color-rail: #173328;
+  --color-line: #2d5644;
+
+  --color-cream: #f4efe6;
+  --color-cream-dim: #e6dcc8;
+  --color-muted: #cbbfa8;
+  --color-ink: #1a1612;
+
+  --color-gold: #e0b15c;
+  --color-gold-deep: #b4843a;
+  --color-suit: #c23d3d;
+
+  --radius-card: 0.7rem;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100dvh;
+    background: var(--color-felt-deep);
+    color: var(--color-cream);
+    font-family: var(--font-sans);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  button {
+    touch-action: manipulation;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer components {
+  .room {
+    background:
+      radial-gradient(ellipse at 50% -10%, color-mix(in srgb, var(--color-felt-light) 90%, transparent), transparent 55%),
+      var(--color-felt);
+  }
+
+  .card-back {
+    background-color: var(--color-felt-deep);
+    background-image:
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 5px,
+        color-mix(in srgb, var(--color-gold) 32%, transparent) 5px,
+        color-mix(in srgb, var(--color-gold) 32%, transparent) 6px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 5px,
+        color-mix(in srgb, var(--color-gold) 32%, transparent) 5px,
+        color-mix(in srgb, var(--color-gold) 32%, transparent) 6px
+      );
+    box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--color-gold) 70%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

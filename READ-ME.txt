@@ -1,0 +1,43 @@
+Jade Felt on Windows
+====================
+
+Four tables: Hold'em, Blackjack, Tong-its, and Chinese poker.
+The House book is under "House book" in the lobby.
+
+What you need
+- Windows 10 or 11
+- Node.js 22 LTS, actually installed (not only downloaded)
+- An internet connection the first time, so the libraries can download
+
+Install Node.js
+1. Go to https://nodejs.org
+2. Download the Windows Installer (.msi), 64-bit.
+3. Run that installer. Leave "Add to PATH" checked.
+4. You do not need to reboot.
+
+A PowerShell download, winget, or a version manager often does not put
+node.exe where a double-clicked program can see it. The starter now reads
+the installed PATH itself and also looks in Program Files, fnm, nvm,
+Volta, Scoop, and WinGet. Running the .msi is still the sure path.
+
+Start
+1. Unzip this folder somewhere you can write to, such as Documents\Jade Felt.
+   Do not run it from inside the zip.
+2. Double-click "Start Jade Felt.bat".
+3. Leave the window open. The game opens at http://127.0.0.1:8080
+   If the page is not ready yet, wait a few seconds and refresh.
+4. To stop, close that window, or press Ctrl+C in it.
+
+If it still says Node.js is missing
+- Open a new PowerShell window and run:  node -v
+- If that is not recognized, the installer did not finish. Run the .msi.
+- If that prints v22.something, double-click the bat again.
+
+Your chip cage stays in the browser. The house book stays only while that
+window is open. Closing it starts the book fresh next time. Play money only.
+
+If Windows asks about a firewall, allow the app on private networks.
+
+The house book keeps a tape of every session: sit-down, chip deposits and
+withdrawals, turns, checks, folds, raises, cards drawn, and cards thrown,
+each with the time. Open a session there and press Play to replay it.
